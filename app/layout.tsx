@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Thai_Looped } from "next/font/google";
 import "./globals.css";
-import Credit from "@/components/ui/credit";
 
 const notoSansThaiLooped = Noto_Sans_Thai_Looped({
   weight: "400",
@@ -20,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSansThaiLooped.className}>
-        {children}
-      </body>
+      <body className={notoSansThaiLooped.className}>{children}</body>
     </html>
   );
 }
