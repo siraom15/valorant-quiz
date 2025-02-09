@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import Credit from "@/components/ui/credit";
 
 export default function Landing() {
   return (
@@ -38,6 +39,7 @@ export default function Landing() {
             เริ่มทำแบบทดสอบ
           </Button>
         </Link>
+        <Credit name="aommie 💔" link="https://github.com/siraom15"/>
       </div>
     </div>
   );
