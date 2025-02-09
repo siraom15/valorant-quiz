@@ -26,7 +26,11 @@ import {
   Wallet,
 } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactGA from 'react-ga';
+
+// Initialize Google Analytics
+ReactGA.initialize('G-79ZT1WDF38'); // Replace with your actual tracking ID
 
 const questions = [
   {
@@ -246,6 +250,11 @@ const playerTypeDescriptions: Record<
 };
 
 export default function Home() {
+  // Track page view on component mount
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
@@ -253,6 +262,13 @@ export default function Home() {
   const handleAnswer = (type: string) => {
     const newAnswers = [...answers, type];
     setAnswers(newAnswers);
+
+    // Track answer selection
+    ReactGA.event({
+      category: 'Quiz',
+      action: 'Select Answer',
+      label: type,
+    });
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
