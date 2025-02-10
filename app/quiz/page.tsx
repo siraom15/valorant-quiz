@@ -32,6 +32,8 @@ import ReactGA from 'react-ga';
 // Initialize Google Analytics
 ReactGA.initialize('G-79ZT1WDF38'); // Replace with your actual tracking ID
 
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 const questions = [
   {
     id: 1,
