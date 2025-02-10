@@ -27,7 +27,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
+
 // Initialize Google Analytics
 ReactGA.initialize("G-79ZT1WDF38"); // Replace with your actual tracking ID
 
@@ -262,7 +263,8 @@ const playerTypeDescriptions: Record<
 export default function Home() {
   // Track page view on component mount
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    console.log("GA " + window.location.pathname + window.location.search);
+    ReactGA.send("pageview");
   }, []);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
