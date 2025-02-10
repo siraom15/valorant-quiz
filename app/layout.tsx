@@ -11,6 +11,20 @@ const notoSansThaiLooped = Noto_Sans_Thai_Looped({
 export const metadata: Metadata = {
   title: "แบบทดสอบวาโรแร้นนนน",
   description: "มาค้นหาสไตล์การเล่น Valorant ของคุณผ่านแบบทดสอบสุดป่วนนี้! 🎯",
+  openGraph: {
+    title: "แบบทดสอบวาโรแร้นนนน",
+    description: "มาค้นหาสไตล์การเล่น Valorant ของคุณผ่านแบบทดสอบสุดป่วนนี้! 🎯",
+    url: "https://vlr-style.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://vlr-style.vercel.app/page-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "VLR Style Preview",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
