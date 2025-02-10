@@ -27,12 +27,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import ReactGA from 'react-ga';
-
+import ReactGA from "react-ga";
 // Initialize Google Analytics
-ReactGA.initialize('G-79ZT1WDF38'); // Replace with your actual tracking ID
+ReactGA.initialize("G-79ZT1WDF38"); // Replace with your actual tracking ID
 
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 const questions = [
   {
@@ -267,8 +265,8 @@ export default function Home() {
 
     // Track answer selection
     ReactGA.event({
-      category: 'Quiz',
-      action: 'Select Answer',
+      category: "Quiz",
+      action: "Select Answer",
       label: type,
     });
 
@@ -322,7 +320,9 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <h2 className="text-2xl font-bold text-center text-[#ff4655]">{result}</h2>
+            <h2 className="text-2xl font-bold text-center text-[#ff4655]">
+              {result}
+            </h2>
             <p className="text-center">
               {playerTypeDescriptions[result].description}
             </p>
